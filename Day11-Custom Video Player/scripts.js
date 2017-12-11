@@ -23,7 +23,7 @@ function skip() {
 }
 
 function handleRangeUpdate(){
-    video[this.name] = this.value;
+    video[this.name] = this.value;                  //`this` is bound to range
 }
 
 function handleProgress(){
