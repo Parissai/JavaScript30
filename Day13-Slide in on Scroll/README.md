@@ -1,6 +1,6 @@
 ### What was new
 
-- [debounce function](https://davidwalsh.name/function-debounce) / [npm](https://www.npmjs.com/package/javascript-debounce)
+- [debounce function](https://css-tricks.com/debouncing-throttling-explained-examples/) / [npm](https://www.npmjs.com/package/javascript-debounce)
 
 - [`Window.scrollY`](https://developer.mozilla.org/en-US/docs/Web/API/Window/scrollY)
 
