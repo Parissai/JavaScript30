@@ -45,11 +45,11 @@
     <script>
         const addItems = document.querySelector('.add-items');
         const itemsList = document.querySelector('.plates');
-        const items = JSON.parse(localStorage.getItem('items') || []);
+        const items = JSON.parse(localStorage.getItem('items') || []);  //as we stored a string version of object -line60- we need to parse it here
 
         function addItem(e) {
             e.preventDefault();
-            const text = (this.querySelector('[name=item]')).value;
+            const text = (this.querySelector('[name=item]')).value;     //this bound to form
             const item = {
                 text,
                 done: false
@@ -57,8 +57,8 @@
 
             items.push(item);
             populateList(items, itemsList);
-            localStorage.setItem('items', JSON.stringify(items));
-            this.reset();
+            localStorage.setItem('items', JSON.stringify(items));   //we need to store string version of object in local storage to be able to retrieve the data later
+            this.reset();           //this bound to submit
         }
 
         function populateList(plates = [], platesList){
@@ -73,18 +73,20 @@
         }
 
         function toggleDone(e){
-            if(!e.target.matches('input')) return;
+            if(!e.target.matches('input')) return;  //skip unless it is an input
             const el = e.target;
             const index = el.dataset.index;
-            items[index].done = !items[index].done;
-            localStorage.setItem('items', JSON.stringify(items));
-            populateList(item, itemsList);
+            items[index].done = !items[index].done;     //toggle done
+            localStorage.setItem('items', JSON.stringify(items));   //update localStorage
+            populateList(item, itemsList);          
         }
 
-        addItems.addEventListener('submit', addItem);
+        addItems.addEventListener('submit', addItem);       //submit covers 'Enter' also
         itemsList.addEventListener('click', toggleDone);
 
         populateList(items, itemsList);
+
+        //TODO add a CLEAR ALL button && CHECK ALL button && UNCHECK ALL button
 
     </script>
 
