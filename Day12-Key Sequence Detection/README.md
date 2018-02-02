@@ -1,3 +1,3 @@
 ### What was new
 
-- `cornify_add()` :rainbow: & :carousel_horse:
+- `cornify_add()` :rainbow: & :unicorn:
